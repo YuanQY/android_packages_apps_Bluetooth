@@ -33,7 +33,7 @@
     <string name="bt_enable_cancel" msgid="1988832367505151727">"取消"</string>
     <string name="bt_enable_ok" msgid="3432462749994538265">"打开"</string>
     <string name="incoming_file_confirm_title" msgid="8139874248612182627">"文件传输"</string>
-    <string name="incoming_file_confirm_content" msgid="6673812334377911289">"“<xliff:g id="SENDER">%1$s</xliff:g>”想给您发送 <xliff:g id="FILE">%2$s</xliff:g> (<xliff:g id="SIZE">%3$s</xliff:g>)。\n\n是否接受该文件？"</string>
+    <string name="incoming_file_confirm_content" msgid="6673812334377911289">"“<xliff:g id="SENDER">%1$s</xliff:g>”想给您发送 <xliff:g id="FILE">%2$s</xliff:g> (<xliff:g id="SIZE">%3$s</xliff:g>)。"\n\n"是否接受该文件？"</string>
     <string name="incoming_file_confirm_cancel" msgid="2973321832477704805">"拒绝"</string>
     <string name="incoming_file_confirm_ok" msgid="281462442932231475">"接受"</string>
     <string name="incoming_file_confirm_timeout_ok" msgid="1414676773249857278">"确定"</string>
@@ -73,9 +73,9 @@
     <string name="upload_fail_cancel" msgid="9118496285835687125">"关闭"</string>
     <string name="bt_error_btn_ok" msgid="5965151173011534240">"确定"</string>
     <string name="unknown_file" msgid="6092727753965095366">"未知文件"</string>
-    <string name="unknown_file_desc" msgid="480434281415453287">"没有可处理此类文件的应用。\n"</string>
+    <string name="unknown_file_desc" msgid="480434281415453287">"没有可处理此类文件的应用。"\n</string>
     <string name="not_exist_file" msgid="3489434189599716133">"没有文件"</string>
-    <string name="not_exist_file_desc" msgid="4059531573790529229">"该文件不存在。\n"</string>
+    <string name="not_exist_file_desc" msgid="4059531573790529229">"该文件不存在。"\n</string>
     <string name="enabling_progress_title" msgid="436157952334723406">"请稍候..."</string>
     <string name="enabling_progress_content" msgid="4601542238119927904">"正在打开蓝牙..."</string>
     <string name="bt_toast_1" msgid="972182708034353383">"系统将要接收该文件。请在“通知”面板中检查进度。"</string>
@@ -105,7 +105,7 @@
     <string name="upload_success" msgid="4014469387779648949">"<xliff:g id="FILE_SIZE">%1$s</xliff:g> 发送完成。"</string>
     <string name="inbound_history_title" msgid="6940914942271327563">"传入历史记录"</string>
     <string name="outbound_history_title" msgid="4279418703178140526">"传出历史记录"</string>
-    <string name="no_transfers" msgid="3482965619151865672">"没有传输历史记录。"</string>
+    <string name="no_transfers" msgid="3482965619151865672">"传输历史记录为空。"</string>
     <string name="transfer_clear_dlg_msg" msgid="1712376797268438075">"所有项都将从列表中清除。"</string>
     <string name="outbound_noti_title" msgid="8051906709452260849">"蓝牙共享：已发送的文件"</string>
     <string name="inbound_noti_title" msgid="4143352641953027595">"蓝牙共享：已接收的文件"</string>

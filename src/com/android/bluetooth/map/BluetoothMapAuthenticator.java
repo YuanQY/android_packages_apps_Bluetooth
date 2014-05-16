@@ -1,17 +1,32 @@
 /*
-* Copyright (C) 2013 Samsung System LSI
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (c) 2008-2009, Motorola, Inc.
+ * Copyright (c) 2010-2011, Code Aurora Forum. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *        * Redistributions of source code must retain the above copyright
+ *          notice, this list of conditions and the following disclaimer.
+ *        * Redistributions in binary form must reproduce the above copyright
+ *          notice, this list of conditions and the following disclaimer in the
+ *          documentation and/or other materials provided with the distribution.
+ *        * Neither the name of Code Aurora nor
+ *          the names of its contributors may be used to endorse or promote
+ *          products derived from this software without specific prior written
+ *          permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NON-INFRINGEMENT ARE DISCLAIMED.    IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
 package com.android.bluetooth.map;
 
 import android.os.Handler;
@@ -57,20 +72,20 @@ public class BluetoothMapAuthenticator implements Authenticator {
 
     private void waitUserConfirmation() {
         Message msg = Message.obtain(mCallback);
-        msg.what = BluetoothMapService.MSG_OBEX_AUTH_CHALL;
+        msg.what = BluetoothMasService.MSG_OBEX_AUTH_CHALL;
         msg.sendToTarget();
         synchronized (this) {
             while (!mChallenged && !mAuthCancelled) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
-                    Log.e(TAG, "Interrupted while waiting on isChallenged");
+                    Log.e(TAG, "Interrupted while waiting on isChalled");
                 }
             }
         }
     }
 
-    public PasswordAuthentication onAuthenticationChallenge(final String description,
+      public PasswordAuthentication onAuthenticationChallenge(final String description,
             final boolean isUserIdRequired, final boolean isFullAccess) {
         waitUserConfirmation();
         if (mSessionKey.trim().length() != 0) {
@@ -80,9 +95,9 @@ public class BluetoothMapAuthenticator implements Authenticator {
         return null;
     }
 
-    // TODO: Reserved for future use only, in case MSE challenge MCE
+    // TODO: Reserved for future use only, in case PSE challenge PCE
     public byte[] onAuthenticationResponse(final byte[] userName) {
-        byte[] b = null;
-        return b;
+        return null;
     }
 }
+
